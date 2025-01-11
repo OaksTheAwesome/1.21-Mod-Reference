@@ -1,5 +1,6 @@
 package net.oakstheawesome.testmod;
 
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -10,14 +11,18 @@ import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
+import net.oakstheawesome.testmod.items.LightningStick;
 
 import java.util.List;
 
 //---------------------------------------------------------------------------------------------------------------------
+
+
 
 //Registration method
 public class ModItems {
@@ -42,6 +47,8 @@ public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance",
         tooltip.add(Text.translatable("tooltip.testmod.suspicious_substance.tooltip").formatted(Formatting.LIGHT_PURPLE));
         super.appendTooltip(stack, context, tooltip, type);
     }});
+
+public static final Item LIGHTNING_STICK = register("lightning_stick", new LightningStick(new Item.Settings()));
 
 
 //Example of a food item
@@ -69,8 +76,32 @@ public static final Item GUIDITE_BOOTS = register("guidite_boots", new ArmorItem
 //---------------------------------------------------------------------------------------------------------------------
 
 
+//Custom Mod Items Group
+public static final ItemGroup OAKS_MOD_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
+        Identifier.of(TestMod.MOD_ID, "oaks_mod_items"),
+        FabricItemGroup.builder()
+                .icon(() -> new ItemStack(ModItems.SUSPICIOUS_SUBSTANCE))
+                .displayName(Text.translatable("itemgroup.testmod"))
+                .entries(((displayContext, entries) -> {
+                    entries.add(ModItems.GUIDITE_BOOTS);
+                    entries.add(ModItems.GUIDITE_LEGGINGS);
+                    entries.add(ModItems.GUIDITE_CHESTPLATE);
+                    entries.add(ModItems.GUIDITE_HELMET);
+                    entries.add(ModItems.GUIDITE_SWORD);
+                    entries.add(ModItems.LIGHTNING_STICK);
+                    entries.add(ModItems.SUSPICIOUS_SUBSTANCE);
+                    entries.add(ModItems.PEAR);
 
-//Initialize Mod Items and register items to groups
+                }))
+                .build());
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+
+
+
+//Initialize Mod Items and register items to vanilla groups
 public static void initialize(){
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
         fabricItemGroupEntries.add(SUSPICIOUS_SUBSTANCE);
