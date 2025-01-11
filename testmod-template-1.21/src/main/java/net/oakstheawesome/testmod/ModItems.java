@@ -6,10 +6,7 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -20,6 +17,7 @@ import net.minecraft.util.Rarity;
 
 import java.util.List;
 
+//---------------------------------------------------------------------------------------------------------------------
 
 //Registration method
 public class ModItems {
@@ -30,6 +28,11 @@ public class ModItems {
     }
 
 
+
+//---------------------------------------------------------------------------------------------------------------------
+
+
+
 //Add Mod Items here
 public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance", new Item(new Item.Settings()
     .rarity(Rarity.UNCOMMON)) {
@@ -38,7 +41,8 @@ public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance",
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatable("tooltip.testmod.suspicious_substance.tooltip").formatted(Formatting.LIGHT_PURPLE));
         super.appendTooltip(stack, context, tooltip, type);
-    }}); //Add next item beyond this point
+    }});
+
 
 //Example of a food item
 public static final Item PEAR = register("pear", new Item(new Item.Settings()
@@ -48,25 +52,45 @@ public static final Item PEAR = register("pear", new Item(new Item.Settings()
                 .saturationModifier(3)
                 .build())));
 
+
 //Example of a tool/weapon, values relative to material's stats (In this case, GuiditeMaterial stats. Ex attack dmg base is 8.0F=9 + 4 = 13 attack dmg total
 public static final Item GUIDITE_SWORD = register("guidite_sword", new SwordItem(GuiditeMaterial.INSTANCE, new Item.Settings()
         .attributeModifiers(SwordItem.createAttributeModifiers(GuiditeMaterial.INSTANCE, 4, -2.4f))));
 
 
+//Armor item additions, pulls from ModArmorMaterials
+public static final Item GUIDITE_HELMET = register("guidite_helmet", new ArmorItem(ModArmorMatierals.GUIDITE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(ModArmorMatierals.GUIDITE_DURABILITY_MULTIPLIER))));
+public static final Item GUIDITE_CHESTPLATE = register("guidite_chestplate", new ArmorItem(ModArmorMatierals.GUIDITE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(ModArmorMatierals.GUIDITE_DURABILITY_MULTIPLIER))));
+public static final Item GUIDITE_LEGGINGS = register("guidite_leggings", new ArmorItem(ModArmorMatierals.GUIDITE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(ModArmorMatierals.GUIDITE_DURABILITY_MULTIPLIER))));
+public static final Item GUIDITE_BOOTS = register("guidite_boots", new ArmorItem(ModArmorMatierals.GUIDITE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(ModArmorMatierals.GUIDITE_DURABILITY_MULTIPLIER))));
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+
+
 
 //Initialize Mod Items and register items to groups
 public static void initialize(){
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                    .register(fabricItemGroupEntries -> fabricItemGroupEntries
-                            .add(ModItems.SUSPICIOUS_SUBSTANCE));
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(fabricItemGroupEntries -> {
+        fabricItemGroupEntries.add(SUSPICIOUS_SUBSTANCE);
+    });
 
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK)
-                    .register(fabricItemGroupEntries -> fabricItemGroupEntries
-                            .add(ModItems.PEAR));
 
-    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
-                    .register(fabricItemGroupEntries -> fabricItemGroupEntries
-                            .add(ModItems.GUIDITE_SWORD));
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(fabricItemGroupEntries -> {
+        fabricItemGroupEntries.add(PEAR);
+    });
+
+
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(fabricItemGroupEntries -> {
+        fabricItemGroupEntries.add(GUIDITE_BOOTS);
+        fabricItemGroupEntries.add(GUIDITE_LEGGINGS);
+        fabricItemGroupEntries.add(GUIDITE_CHESTPLATE);
+        fabricItemGroupEntries.add(GUIDITE_HELMET);
+
+        fabricItemGroupEntries.add(GUIDITE_SWORD);
+    });
+
 
     FuelRegistry.INSTANCE
             .add(ModItems.SUSPICIOUS_SUBSTANCE, 30 * 20);

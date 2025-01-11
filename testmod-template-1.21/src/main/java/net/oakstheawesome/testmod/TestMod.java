@@ -15,6 +15,7 @@ public class TestMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModArmorMatierals.initialize();
 		ModItems.initialize();
 
 		LOGGER.info("Hello Fabric world!");

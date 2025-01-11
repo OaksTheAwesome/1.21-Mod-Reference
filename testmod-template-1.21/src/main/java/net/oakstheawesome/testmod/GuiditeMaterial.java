@@ -7,6 +7,8 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 
+
+//Custom material for items using the material, these values act as a basis, some things overriden by item types. E.X. SwordItem, slow mining any block.
 public class GuiditeMaterial implements ToolMaterial {
 
     @Override

@@ -1,7 +1,15 @@
 {
   "item.testmod.suspicious_substance": "Suspicious Substance",
+
   "item.testmod.pear": "Pear",
+
   "item.testmod.guidite_sword": "Guidite Sword",
+
+  "item.testmod.guidite_helmet": "Guidite Helmet",
+  "item.testmod.guidite_chestplate": "Guidite Chestplate",
+  "item.testmod.guidite_leggings": "Guidite Leggings",
+  "item.testmod.guidite_boots": "Guidite Boots",
+
 
   "tooltip.testmod.suspicious_substance.tooltip": "This substance is... sus..."
 }
