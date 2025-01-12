@@ -13,7 +13,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.oakstheawesome.testmod.ModEnchantmentEffects;
-import net.oakstheawesome.testmod.ModItems;
 import net.oakstheawesome.testmod.enchantment.effect.LightningEnchantmentEffect;
 import net.oakstheawesome.testmod.util.ModTags;
 
@@ -30,7 +29,7 @@ public class EnchantmentGenerator extends FabricDynamicRegistryProvider {
         register(entries, ModEnchantmentEffects.THUNDERING, Enchantment.builder(
                 Enchantment.definition(
                         registries.getWrapperOrThrow(RegistryKeys.ITEM).getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
-                        registries.getWrapperOrThrow(RegistryKeys.ITEM).getOrThrow(ModTags.Items.MOD_ENCHANTABLE_ITEMS_SWORD),
+                        registries.getWrapperOrThrow(RegistryKeys.ITEM).getOrThrow(ModTags.Items.MOD_ENCHANTABLE_ITEMS_THUNDERING),
                         10,
                         3,
                         Enchantment.leveledCost(1, 10),
@@ -56,6 +55,6 @@ public class EnchantmentGenerator extends FabricDynamicRegistryProvider {
 
     @Override
     public String getName() {
-        return "TestModEnchantmentGenerator";
+        return "EnchantmentGenerator";
     }
 }

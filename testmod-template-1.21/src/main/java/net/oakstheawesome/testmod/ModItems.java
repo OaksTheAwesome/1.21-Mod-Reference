@@ -48,6 +48,7 @@ public static final Item SUSPICIOUS_SUBSTANCE = register("suspicious_substance",
         super.appendTooltip(stack, context, tooltip, type);
     }});
 
+//Registers custom item Lightning Stick, handled in items/LightningStick
 public static final Item LIGHTNING_STICK = register("lightning_stick", new LightningStick(new Item.Settings()));
 
 

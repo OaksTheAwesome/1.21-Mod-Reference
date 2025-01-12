@@ -11,11 +11,13 @@
   "item.testmod.guidite_leggings": "Guidite Leggings",
   "item.testmod.guidite_boots": "Guidite Boots",
 
-
   "itemgroup.testmod": "Oak's Mod Items",
 
   "tooltip.testmod.suspicious_substance.tooltip": "This substance is... sus...",
 
-  "enchantment.testmod.thundering": "Thundering"
+  "enchantment.testmod.thundering": "Thundering",
 
+  "effect.testmod.tater": "Tater",
+
+  "item.minecraft.potion.effect.tater": "Potion of Tater"
 }

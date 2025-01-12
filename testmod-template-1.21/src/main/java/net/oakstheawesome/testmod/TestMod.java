@@ -2,11 +2,24 @@ package net.oakstheawesome.testmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
+import net.oakstheawesome.testmod.effects.TaterEffect;
+import net.oakstheawesome.testmod.potion.ModPotions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class TestMod implements ModInitializer {
 	public static final String MOD_ID = "testmod";
+
+	//Registers effect
+	public static final RegistryEntry<StatusEffect> TATER;
+	static {
+		TATER = Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of("testmod", "tater"), new TaterEffect());
+	}
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -18,7 +31,8 @@ public class TestMod implements ModInitializer {
 		ModArmorMatierals.initialize();
 		ModItems.initialize();
         ModEnchantmentEffects.registerModEnchantmentEffects();
+		ModPotions.initialize();
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Oak's Test Mod!");
 	}
 }
