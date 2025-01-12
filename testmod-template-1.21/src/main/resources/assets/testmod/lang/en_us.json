@@ -14,5 +14,8 @@
 
   "itemgroup.testmod": "Oak's Mod Items",
 
-  "tooltip.testmod.suspicious_substance.tooltip": "This substance is... sus..."
+  "tooltip.testmod.suspicious_substance.tooltip": "This substance is... sus...",
+
+  "enchantment.testmod.thundering": "Thundering"
+
 }
