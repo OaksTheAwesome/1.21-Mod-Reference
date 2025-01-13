@@ -11,6 +11,8 @@
   "item.testmod.guidite_leggings": "Guidite Leggings",
   "item.testmod.guidite_boots": "Guidite Boots",
 
+  "block.testmod.condensed_dirt": "Condensed Dirt",
+
   "itemgroup.testmod": "Oak's Mod Items",
 
   "tooltip.testmod.suspicious_substance.tooltip": "This substance is... sus...",

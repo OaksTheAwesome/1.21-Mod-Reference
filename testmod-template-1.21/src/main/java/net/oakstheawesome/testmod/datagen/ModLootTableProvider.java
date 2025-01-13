@@ -3,7 +3,10 @@ package net.oakstheawesome.testmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
+import net.oakstheawesome.testmod.ModBlocks;
 import net.oakstheawesome.testmod.ModItems;
 import net.oakstheawesome.testmod.util.ModTags;
 
@@ -16,6 +19,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        addDrop(ModBlocks.CONDENSED_DIRT);
         //addDrop(Blocks.IRON_BLOCK, drops(ModItems.SUSPICIOUS_SUBSTANCE));
     }
 }

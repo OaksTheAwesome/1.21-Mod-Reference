@@ -30,6 +30,7 @@ public class TestMod implements ModInitializer {
 	public void onInitialize() {
 		ModArmorMatierals.initialize();
 		ModItems.initialize();
+		ModBlocks.initialize();
         ModEnchantmentEffects.registerModEnchantmentEffects();
 		ModPotions.initialize();
 

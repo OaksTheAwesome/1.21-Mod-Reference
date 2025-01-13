@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.oakstheawesome.testmod.ModBlocks;
 import net.oakstheawesome.testmod.ModItems;
 
 //This is the most important datagen, creates .json for all items and blocks
@@ -15,7 +16,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        //blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MODBLOCK_HERE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_DIRT);
 
 
     }
@@ -30,6 +31,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.GUIDITE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.PEAR, Models.GENERATED);
         itemModelGenerator.register(ModItems.LIGHTNING_STICK, Models.GENERATED);
+
 
     }
 }
