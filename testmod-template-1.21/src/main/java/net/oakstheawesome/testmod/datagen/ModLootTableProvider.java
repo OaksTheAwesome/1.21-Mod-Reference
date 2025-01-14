@@ -20,6 +20,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.CONDENSED_DIRT);
+        addDrop(ModBlocks.CONDENSED_OAK_LOG);
         //addDrop(Blocks.IRON_BLOCK, drops(ModItems.SUSPICIOUS_SUBSTANCE));
     }
 }

@@ -93,6 +93,8 @@ public static final ItemGroup OAKS_MOD_ITEMS_GROUP = Registry.register(Registrie
                     entries.add(ModItems.SUSPICIOUS_SUBSTANCE);
                     entries.add(ModItems.PEAR);
                     entries.add(ModBlocks.CONDENSED_DIRT);
+                    entries.add(ModBlocks.CONDENSED_OAK_LOG);
+                    entries.add(ModBlocks.PRISMARINE_LAMP);
 
                 }))
                 .build());

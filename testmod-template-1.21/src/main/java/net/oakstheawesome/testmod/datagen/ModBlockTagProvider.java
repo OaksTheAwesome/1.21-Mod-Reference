@@ -26,7 +26,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .add(ModBlocks.CONDENSED_DIRT);
 
-        //getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-               // .add(Blocks.DIAMOND_ORE);
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.CONDENSED_OAK_LOG);
     }
 }
