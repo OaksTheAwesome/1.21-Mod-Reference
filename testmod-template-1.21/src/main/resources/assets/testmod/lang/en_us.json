@@ -15,6 +15,17 @@
   "block.testmod.condensed_oak_log": "Condensed Oak Log",
   "block.testmod.prismarine_lamp": "Prismarine Lamp",
 
+  "block.testmod.condensed_dirt_door": "Condensed Dirt Door",
+  "block.testmod.condensed_dirt_trapdoor": "Condensed Dirt Trapdoor",
+  "block.testmod.condensed_dirt_fence_gate": "Condensed Dirt Fence Gate",
+  "block.testmod.condensed_dirt_fence": "Condensed Dirt Fence",
+  "block.testmod.condensed_dirt_wall": "Condensed Dirt Wall",
+  "block.testmod.condensed_dirt_pressure_plate": "Condensed Dirt Pressure Plate",
+  "block.testmod.condensed_dirt_button": "Condensed Dirt Button",
+  "block.testmod.condensed_dirt_stairs": "Condensed Dirt Stairs",
+  "block.testmod.condensed_dirt_slab": "Condensed Dirt Slab",
+
+
   "itemgroup.testmod": "Oak's Mod Items",
 
   "tooltip.testmod.suspicious_substance.tooltip": "This substance is... sus...",

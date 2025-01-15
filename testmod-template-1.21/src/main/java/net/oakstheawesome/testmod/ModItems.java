@@ -95,6 +95,16 @@ public static final ItemGroup OAKS_MOD_ITEMS_GROUP = Registry.register(Registrie
                     entries.add(ModBlocks.CONDENSED_DIRT);
                     entries.add(ModBlocks.CONDENSED_OAK_LOG);
                     entries.add(ModBlocks.PRISMARINE_LAMP);
+                    entries.add(ModBlocks.CONDENSED_DIRT_DOOR);
+                    entries.add(ModBlocks.CONDENSED_DIRT_TRAPDOOR);
+                    entries.add(ModBlocks.CONDENSED_DIRT_FENCE_GATE);
+                    entries.add(ModBlocks.CONDENSED_DIRT_FENCE);
+                    entries.add(ModBlocks.CONDENSED_DIRT_WALL);
+                    entries.add(ModBlocks.CONDENSED_DIRT_PRESSURE_PLATE);
+                    entries.add(ModBlocks.CONDENSED_DIRT_BUTTON);
+                    entries.add(ModBlocks.CONDENSED_DIRT_STAIRS);
+                    entries.add(ModBlocks.CONDENSED_DIRT_SLAB);
+
 
                 }))
                 .build());

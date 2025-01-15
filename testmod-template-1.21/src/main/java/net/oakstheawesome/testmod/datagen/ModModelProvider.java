@@ -16,8 +16,19 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_DIRT);
+        BlockStateModelGenerator.BlockTexturePool condensedDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CONDENSED_DIRT);
         blockStateModelGenerator.registerLog(ModBlocks.CONDENSED_OAK_LOG).log(ModBlocks.CONDENSED_OAK_LOG);
+
+        condensedDirtPool.stairs(ModBlocks.CONDENSED_DIRT_STAIRS);
+        condensedDirtPool.slab(ModBlocks.CONDENSED_DIRT_SLAB);
+        condensedDirtPool.button(ModBlocks.CONDENSED_DIRT_BUTTON);
+        condensedDirtPool.pressurePlate(ModBlocks.CONDENSED_DIRT_PRESSURE_PLATE);
+        condensedDirtPool.fence(ModBlocks.CONDENSED_DIRT_FENCE);
+        condensedDirtPool.fenceGate(ModBlocks.CONDENSED_DIRT_FENCE_GATE);
+        condensedDirtPool.wall(ModBlocks.CONDENSED_DIRT_WALL);
+
+        blockStateModelGenerator.registerDoor(ModBlocks.CONDENSED_DIRT_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.CONDENSED_DIRT_TRAPDOOR);
 
         Identifier lampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PRISMARINE_LAMP, blockStateModelGenerator.modelCollector);
         Identifier lampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.PRISMARINE_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);

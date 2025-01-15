@@ -28,5 +28,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(ModBlocks.CONDENSED_OAK_LOG);
+
+        getOrCreateTagBuilder(BlockTags.FENCES).add(ModBlocks.CONDENSED_DIRT_FENCE);
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.CONDENSED_DIRT_FENCE_GATE);
+        getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.CONDENSED_DIRT_WALL);
     }
 }

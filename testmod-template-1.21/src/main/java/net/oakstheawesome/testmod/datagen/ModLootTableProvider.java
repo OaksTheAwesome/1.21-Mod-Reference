@@ -21,6 +21,15 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.CONDENSED_DIRT);
         addDrop(ModBlocks.CONDENSED_OAK_LOG);
+        addDrop(ModBlocks.CONDENSED_DIRT_BUTTON);
+        addDrop(ModBlocks.CONDENSED_DIRT_DOOR, doorDrops(ModBlocks.CONDENSED_DIRT_DOOR));
+        addDrop(ModBlocks.CONDENSED_DIRT_FENCE);
+        addDrop(ModBlocks.CONDENSED_DIRT_FENCE_GATE);
+        addDrop(ModBlocks.CONDENSED_DIRT_SLAB, slabDrops(ModBlocks.CONDENSED_DIRT_SLAB));
+        addDrop(ModBlocks.CONDENSED_DIRT_STAIRS);
+        addDrop(ModBlocks.CONDENSED_DIRT_PRESSURE_PLATE);
+        addDrop(ModBlocks.CONDENSED_DIRT_TRAPDOOR);
+        addDrop(ModBlocks.CONDENSED_DIRT_WALL);
         //addDrop(Blocks.IRON_BLOCK, drops(ModItems.SUSPICIOUS_SUBSTANCE));
     }
 }
